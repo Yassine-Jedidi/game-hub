@@ -1,4 +1,4 @@
-import useGenres, { Genre } from "../hooks/UseGenres";
+import useGenres, { Genre } from "../hooks/useGenres";
 
 import {
   Button,

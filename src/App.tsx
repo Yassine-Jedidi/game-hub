@@ -1,10 +1,12 @@
 import {
+  Box,
   Button,
   ButtonGroup,
   DarkMode,
   Grid,
   GridItem,
   HStack,
+  Heading,
   Show,
 } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
@@ -16,6 +18,7 @@ import PlatformSelector from "./components/PlatformSelector";
 import { Platform } from "./hooks/useGames";
 import SortSelector from "./components/SortSelector";
 import SearchInput from "./components/SearchInput";
+import GameHeading from "./components/GameHeading";
 
 export interface GameQuery {
   genre: Genre | null;
@@ -52,6 +55,7 @@ function App() {
         </GridItem>
       </Show>
       <GridItem area="main">
+        <GameHeading gameQuery={gameQuery} />
         <HStack spacing={5} paddingLeft={7} marginBottom={2}>
           <PlatformSelector
             selectedPlatform={gameQuery.platform}
@@ -66,6 +70,7 @@ function App() {
             }
           />
         </HStack>
+
         <GameGrid gameQuery={gameQuery} />
       </GridItem>
     </Grid>

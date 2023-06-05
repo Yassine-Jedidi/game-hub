@@ -1,8 +1,9 @@
 import useData from "./useData";
 import { Platform } from "./useGames";
+import platforms from "../data/platforms";
 
 const usePlatform = () => {
-    return useData<Platform>("/platforms/lists/parents");
-}
+    return {data:platforms,isLoading:false,error:null};
+    }
 
 export default usePlatform
